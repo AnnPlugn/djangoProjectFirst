@@ -18,9 +18,6 @@ def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangoProjectFirst.settings')
 
-    # List directory contents before running Django
-    list_directory_contents()
-
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 from .keyconfig import Database, Secrets
+from dotenv import load_dotenv
+from pymongo import MongoClient
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -9,6 +11,11 @@ SECRET_KEY = Secrets.SECRET_KEY
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
+MONGO_CLIENT = MongoClient('mongodb://localhost:27017/')
+MONGO_DB = MONGO_CLIENT['django_vector_db']
+MONGO_COLLECTION_DOCS = MONGO_DB['documents']
+MONGO_COLLECTION_INDEX = MONGO_DB['index_to_docstore_id']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -51,17 +58,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djangoProjectFirst.wsgi.application'
 
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": Database.NAME,
-        "USER": Database.USER,
-        "PASSWORD": Database.PASSWORD,
-        "HOST": Database.HOST,
-        "PORT": Database.PORT,
+        "ENGINE": "django.db.backends." + os.getenv("DB_ENGINE", "sqlite3"),
+        "NAME": os.getenv("DB_NAME", "pharmdb"),
+        "USER": os.getenv("DB_USER", "django"),
+        "PASSWORD": os.getenv("DB_PASSWORD", ""),
+        "HOST": os.getenv("DB_HOST", "localhost"),
+        "PORT": os.getenv("DB_PORT", 5432),
     }
 }
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -89,5 +96,7 @@ STATICFILES_DIRS = [STATIC_DIR]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CONFIGURED = True  # после успешной загрузки всех настроек
 
 LOGIN_URL = '/login/'

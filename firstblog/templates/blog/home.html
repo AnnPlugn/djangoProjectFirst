@@ -3,24 +3,8 @@
 
 {% block content %}
     <div class="container text-center">
-        <h1>AI Pharma Agent</h1>
-        <p class="lead">Интеллектуальный помощник для фармацевтической отрасли</p>
-        <div class="card shadow-sm p-4 mb-4" style="background-color: #FFF; border: 1px solid #E8ECEF;">
-            <h3>Сбор данных о недвижимости (Пример модели)</h3>
-            <form method="post" action="{% url 'firstblog:train_polynomial_regression_model' %}">
-                {% csrf_token %}
-                <div class="mb-3">
-                    <label for="url" class="form-label">URL объявления (например, CIAN)</label>
-                    <input type="text" name="url" class="form-control" id="url" placeholder="Введите URL объявления" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Получить данные</button>
-            </form>
-            {% if model_output %}
-                <div class="mt-3">
-                    <h4>Результат:</h4>
-                    <p>{{ model_output }}</p>
-                </div>
-            {% endif %}
-        </div>
+        <h1>Добро пожаловать в AI Pharma Agent</h1>
+        <p class="lead">Интеллектуальные решения для фармацевтической отрасли</p>
+        <a href="{% url 'firstblog:result' %}" class="btn btn-purple">Консультант</a>
     </div>
 {% endblock %}
