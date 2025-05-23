@@ -2,21 +2,21 @@ import os
 from pathlib import Path
 from .keyconfig import Database, Secrets
 from dotenv import load_dotenv
-from pymongo import MongoClient
 
+# Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Security settings
 SECRET_KEY = Secrets.SECRET_KEY
-
 DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
-MONGO_CLIENT = MongoClient('mongodb://localhost:27017/')
-MONGO_DB = MONGO_CLIENT['django_vector_db']
-MONGO_COLLECTION_DOCS = MONGO_DB['documents']
-MONGO_COLLECTION_INDEX = MONGO_DB['index_to_docstore_id']
+# MongoDB configuration
+MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
+MONGO_DB_NAME = os.getenv("MONGO_DB_NAME", "django_vector_db")
+MONGO_COLLECTION_DOCS = "documents"
 
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -58,7 +58,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djangoProjectFirst.wsgi.application'
 
-
+# Database configuration (PostgreSQL/SQLite for auth)
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends." + os.getenv("DB_ENGINE", "sqlite3"),
@@ -69,6 +69,8 @@ DATABASES = {
         "PORT": os.getenv("DB_PORT", 5432),
     }
 }
+
+# Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -84,19 +86,24 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Internationalization
 LANGUAGE_CODE = 'ru-ru'
 TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+# Static files
 STATIC_URL = '/static/'
 STATIC_DIR = BASE_DIR / 'firstblog' / 'static'
 STATICFILES_DIRS = [STATIC_DIR]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CONFIGURED = True  # после успешной загрузки всех настроек
-
+# Login URL
 LOGIN_URL = '/login/'
+
+# Configuration flag
+CONFIGURED = True
