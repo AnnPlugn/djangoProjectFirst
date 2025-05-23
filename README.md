@@ -199,7 +199,7 @@ docker-compose down -v
 - **Проверка `ALLOWED_HOSTS`**:
   Убедитесь, что в `djangoProjectFirst/settings.py` указано:
   ```python
-  ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
+  ALLOWED_HOSTS = ['*']
   ```
 
 - **Проверка логов**:
@@ -210,7 +210,7 @@ docker-compose down -v
 
 ### Проблемы с подключением к базе данных
 
-- Проверьте, что учетные данные в `.env` соответствуют `POSTGRES_USER`, `POSTGRES_PASSWORD` и `POSTGRES_DB` в `docker-compose.yml`.
+- Проверьте, что учетные данные в `.env` соответствуют `POSTGRES_USER`, `POSTGRES_PASSWORD` и `POSTGRES_DB` в `docker-compose.yml` и keyconfig.py.
 - Убедитесь, что сервис `db` работает корректно:
   ```bash
   docker-compose logs db
