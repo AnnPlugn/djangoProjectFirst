@@ -2,9 +2,137 @@
 {% load static %}
 
 {% block content %}
-    <div class="container text-center">
-        <h1>Добро пожаловать в AI Pharma Agent</h1>
-        <p class="lead">Интеллектуальные решения для фармацевтической отрасли</p>
-        <a href="{% url 'firstblog:result' %}" class="btn btn-purple">Консультант</a>
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 mb-4">Реинжиниринг регуляторных процессов с GXP AI Agent</h1>
+                <p class="lead mb-4">Автоматизируем 80% рутинных RA-процессов с гарантией соответствия требованиям РФ и ЕАЭС</p>
+                <div class="d-flex gap-3">
+                    <a href="{% url 'firstblog:result' %}" class="btn btn-primary btn-lg px-4">
+                        <i class="fas fa-robot me-2"></i>Консультант
+                    </a>
+                    <a href="#features" class="btn btn-outline-primary btn-lg px-4">
+                        <i class="fas fa-chart-line me-2"></i>Возможности
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <img src="{% static 'hero-illustration.png' %}" alt="AI Pharma Agent" class="img-fluid">
+            </div>
+        </div>
     </div>
+</div>
+
+<section id="features" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2>Как мы экономим ваши ресурсы</h2>
+            <p class="lead text-muted">3000-5000+ часов в год за счет автоматизации</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card h-100">
+                    <div class="icon-box bg-primary">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Анализ НД</h3>
+                    <p>Автоматический мониторинг изменений в нормативных документах</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card h-100">
+                    <div class="icon-box bg-success">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Подготовка досье</h3>
+                    <p>Генерация документов по утвержденным шаблонам</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card h-100">
+                    <div class="icon-box bg-warning">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Контроль сроков</h3>
+                    <p>Автоматические напоминания о критических датах</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero-section {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    }
+    
+    .hero-section h1 {
+        font-weight: 700;
+        color: #2d3748;
+        line-height: 1.2;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.25rem;
+        color: #4a5568;
+    }
+    
+    .feature-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .icon-box {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    .feature-card h3 {
+        color: #2d3748;
+        margin-bottom: 1rem;
+    }
+    
+    .feature-card p {
+        color: #718096;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+        border: none;
+        border-radius: 8px;
+    }
+    
+    .btn-outline-primary {
+        border-color: #6a11cb;
+        color: #6a11cb;
+        border-radius: 8px;
+    }
+    
+    .btn-outline-primary:hover {
+        background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+        color: white;
+    }
+</style>
 {% endblock %}

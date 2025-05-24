@@ -3,45 +3,394 @@
 
 {% block content %}
     <div class="container">
-        <h1>О нас</h1>
-        <p class="lead">Мы — команда AI Pharma Agent, создающая интеллектуальные решения для фармацевтической отрасли.</p>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card shadow-sm">
-                    <img src="{% static 'team1.jpg' %}" class="card-img-top" alt="Team Member 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Иван Иванов</h5>
-                        <p class="card-text">Главный разработчик</p>
+        <div class="hero-section text-center mb-5">
+            <h1 class="display-4 gradient-text">GXP AI Agent</h1>
+            <p class="lead futuristic-text">Интеллектуальные решения для фармацевтической регуляторики</p>
+            <div class="particles-js" id="particles-js"></div>
+        </div>
+        <!-- Новый аналитический блок -->
+        <div class="analytics-section mb-5">
+            <h2 class="text-center mb-4">Регистрация лекарств в РФ и ЕАЭС сегодня</h2>
+            
+            <div class="analytics-card mb-4">
+                <h4>Регистрация усложняется, а новых кадров недостаёт:</h4>
+                <ul class="analytics-list">
+                    <li>Объём документов увеличивается на 12–15% в год</li>
+                    <li>Правила регистрации постоянно меняются (ЕАЭС ≠ РФ ≠ локальные органы)</li>
+                    <li>Острый кадровый дефицит: не хватает ~7000 регуляторных специалистов</li>
+                </ul>
+            </div>
+            
+            <div class="analytics-card mb-4">
+                <h4>RA-команды перегружены:</h4>
+                <ul class="analytics-list">
+                    <li>2–3 человека на регистрацию вместо рекомендованных 4–5</li>
+                    <li>Поддержание актуальности досье = монотонный ручной труд = ошибки + постоянные перепроверки документов</li>
+                </ul>
+            </div>
+            
+            <div class="analytics-card mb-4">
+                <h4>Цена ошибки — миллионы:</h4>
+                <ul class="analytics-list">
+                    <li>Задержка регистрации = 60–120 млн Р / месяц упущенной выручки</li>
+                    <li>Нарушения = штрафы до 2 млн Р + отзыв лицензии / репутационные потери</li>
+                </ul>
+            </div>
+            
+            <div class="market-demand text-center py-3">
+                <h4 class="mb-0">Рынок требует автоматизации процессов</h4>
+            </div>
+        </div>
+        
+        <div class="innovation-stats mb-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="stat-card holographic">
+                        <h3>3000-5000+</h3>
+                        <p>часов экономии в год</p>
+                        <div class="pulse-effect"></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm">
-                    <img src="{% static 'team2.jpg' %}" class="card-img-top" alt="Team Member 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Анна Петрова</h5>
-                        <p class="card-text">Data Scientist</p>
+                <div class="col-md-4">
+                    <div class="stat-card holographic">
+                        <h3>80+ млн ₽</h3>
+                        <p>предотвращенных потерь</p>
+                        <div class="pulse-effect"></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm">
-                    <img src="{% static 'team3.jpg' %}" class="card-img-top" alt="Team Member 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Сергей Сидоров</h5>
-                        <p class="card-text">Менеджер проекта</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm">
-                    <img src="{% static 'team4.jpg' %}" class="card-img-top" alt="Team Member 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Екатерина Смирнова</h5>
-                        <p class="card-text">UX/UI Дизайнер</p>
+                <div class="col-md-4">
+                    <div class="stat-card holographic">
+                        <h3>100%</h3>
+                        <p>соответствие ФЗ-152</p>
+                        <div class="pulse-effect"></div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title text-center mb-4">Наши технологические решения</h2>
+        
+        <div class="row team-grid">
+            <div class="col-lg-3 col-md-6">
+                <div class="team-card neuro-morphic">
+                    <div class="avatar-container">
+                        <img src="{% static 'ai-brain.png' %}" class="avatar" alt="AI Architect">
+                        <div class="tech-aura"></div>
+                    </div>
+                    <h3>Анализ нормативных документов</h3>
+                    <p class="role">Автоматизированный мониторинг изменений</p>
+                    <div class="expertise">
+                        <span class="badge">ФЗ-61</span>
+                        <span class="badge">ЕАЭС</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="team-card neuro-morphic">
+                    <div class="avatar-container">
+                        <img src="{% static 'regulatory.png' %}" class="avatar" alt="Regulatory AI">
+                        <div class="tech-aura"></div>
+                    </div>
+                    <h3>Регуляторная аналитика</h3>
+                    <p class="role">Прогнозирование сроков регистрации</p>
+                    <div class="expertise">
+                        <span class="badge">GxP</span>
+                        <span class="badge">ICH</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="team-card neuro-morphic">
+                    <div class="avatar-container">
+                        <img src="{% static 'data-core.png' %}" class="avatar" alt="Data Core">
+                        <div class="tech-aura"></div>
+                    </div>
+                    <h3>Управление досье</h3>
+                    <p class="role">Централизованное хранение документов</p>
+                    <div class="expertise">
+                        <span class="badge">REST API</span>
+                        <span class="badge">SQL</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="team-card neuro-morphic">
+                    <div class="avatar-container">
+                        <img src="{% static 'security.png' %}" class="avatar" alt="Security Matrix">
+                        <div class="tech-aura"></div>
+                    </div>
+                    <h3>Безопасность данных</h3>
+                    <p class="role">Полное соответствие требованиям</p>
+                    <div class="expertise">
+                        <span class="badge">ФЗ-152</span>
+                        <span class="badge">GDPR</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mission-statement mt-5">
+            <div class="cyber-border"></div>
+            <h2><i class="fas fa-quote-left"></i> Наша миссия</h2>
+            <p>Автоматизировать 80% рутинных RA-процессов с гарантией 100% соответствия регуляторным требованиям РФ и ЕАЭС, освобождая специалистов для стратегических задач</p>
+            <div class="cyber-border reverse"></div>
+        </div>
     </div>
+
+    <style>
+        /* Новые стили для аналитического блока */
+        .analytics-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .analytics-card {
+            background: #f8fafc;
+            border-left: 4px solid #6a11cb;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .analytics-card h4 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .analytics-list {
+            padding-left: 20px;
+            color: #4a5568;
+        }
+        
+        .analytics-list li {
+            margin-bottom: 8px;
+            position: relative;
+            list-style-type: none;
+        }
+        
+        .analytics-list li:before {
+            content: "•";
+            color: #6a11cb;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .market-demand {
+            background: linear-gradient(90deg, #f3e8ff, #e9d8fd);
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+        
+        .market-demand h4 {
+            color: #6a11cb;
+            font-weight: 700;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+        
+        .futuristic-text {
+            font-family: 'Courier New', monospace;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        .holographic {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .holographic:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+        }
+        
+        .pulse-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 15px;
+            border: 2px solid rgba(106, 17, 203, 0.3);
+            animation: pulse 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            70% { transform: scale(1.05); opacity: 0.7; }
+            100% { transform: scale(1.1); opacity: 0; }
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 1px solid rgba(106, 17, 203, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .neuro-morphic {
+            box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.05),
+                       -8px -8px 16px rgba(255, 255, 255, 0.8);
+        }
+        
+        .neuro-morphic:hover {
+            box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.1),
+                       -12px -12px 24px rgba(255, 255, 255, 0.9);
+            transform: translateY(-5px);
+        }
+        
+        .avatar-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .tech-aura {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border-radius: 50%;
+            z-index: 1;
+            opacity: 0.2;
+            animation: rotate 6s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(106, 17, 203, 0.1);
+            color: #4a5568;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin: 3px;
+            border: 1px solid rgba(106, 17, 203, 0.2);
+        }
+        
+        .mission-statement {
+            position: relative;
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .cyber-border {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #6a11cb, #2575fc, transparent);
+            position: absolute;
+            top: 0;
+            left: 20px;
+            right: 20px;
+        }
+        
+        .cyber-border.reverse {
+            top: auto;
+            bottom: 0;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            margin: 0 auto 30px;
+            color: #2d3748;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            border-radius: 3px;
+        }
+
+        .team-card h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .team-card .role {
+            color: #718096;
+            margin-bottom: 15px;
+        }
+
+        .mission-statement p {
+            color: #4a5568;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+    </style>
+
+    <script>
+        // Инициализация particles.js для фонового эффекта
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#6a11cb" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.3, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#6a11cb", "opacity": 0.2, "width": 1 },
+                    "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": { "enable": true, "mode": "repulse" },
+                        "onclick": { "enable": true, "mode": "push" }
+                    }
+                }
+            });
+        });
+    </script>
 {% endblock %}
